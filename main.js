@@ -11,12 +11,12 @@ unread.push(notification[0], notification[1], notification[2]);
 notVal.innerHTML = unread.length;
 
 markBtn.addEventListener("click", () => {
+    notVal.innerHTML = 0;
     for (let i = 0; i < unread.length; i++) {
         unread[i].classList = "notification";
-        unread[i].children[1].children[0].removeChild(document.querySelector(".badge"));
+        unread[i].children[1].children[0].removeChild(unread[i].querySelector(".badge"));
     };
     unread = [];
-    notVal.innerHTML = unread.length;
 });
 
 for (let i = 0; i < unread.length; i++) {
